@@ -11,6 +11,8 @@
             margin-top: 50px;
             background-color: #F0F3F5; /* Lighter background color */
             color: #333; /* Text color for better contrast */
+            position: relative; /* Added for button positioning */
+            min-height: 100vh; /* Ensures the body takes the full height */
         }
         h1 {
             color: #4CAF50;
@@ -37,6 +39,23 @@
             width: 150px; /* Adjust the size of the YouTube logo */
             height: auto;
         }
+        button {
+            position: absolute; /* Positioning the button */
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%; /* Centering the button */
+            transform: translateX(-50%); /* Adjusting the centering */
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
     </style>
 </head>
 <body>
@@ -59,5 +78,8 @@
         <li><a href="https://binbashbanana.github.io/gfiles/list.html" target="_blank" rel="noopener noreferrer">BinBashBana</a></li>
         <li><a href="https://retrobowl-2.github.io/" target="_blank" rel="noopener noreferrer">Lesson 1 Games</a></li>
     </ul>
+
+    <!-- Button to launch the link -->
+    <button onclick="window.open('https://anamazingpilot.github.io', '_blank');">Visit An Amazing Pilot</button>
 </body>
 </html>
