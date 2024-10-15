@@ -48,6 +48,26 @@
             width: 150px; /* Adjust the size of the YouTube logo */
             height: auto;
         }
+        .game-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .game-icons a {
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .game-icons img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .game-icons img:hover {
+            transform: scale(1.1);
+        }
         button {
             position: absolute; /* Positioning the button */
             bottom: 20px; /* Distance from the bottom */
@@ -91,6 +111,16 @@
         <li><a href="https://snake-3d.com/" target="_blank" rel="noopener noreferrer">Snake 3D</a></li>
         <li><a href="https://candyclicker.io/new-games" target="_blank" rel="noopener noreferrer">Candy Clicker Games</a></li>
     </ul>
+
+    <!-- New Section for Game Icons -->
+    <h2>Game Icons</h2>
+    <div class="game-icons">
+        <a href="game1.html">
+            <img src="game1-icon.png" alt="Game 1 Icon">
+            <p>Play Kirka.io</p>
+        </a>
+        <!-- You can add more game icons here -->
+    </div>
 
     <!-- Button to launch the link -->
     <button onclick="window.open('https://anamazingpilot.github.io', '_blank');">Open this page in new tab</button>
