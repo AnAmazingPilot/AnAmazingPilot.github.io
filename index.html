@@ -26,6 +26,10 @@
         h1 {
             color: #4CAF50;
         }
+        h2 {
+            color: #007BFF;
+            margin-top: 40px;
+        }
         p {
             font-size: 1.2em;
         }
@@ -48,26 +52,6 @@
             width: 150px; /* Adjust the size of the YouTube logo */
             height: auto;
         }
-        .game-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .game-icons a {
-            margin: 10px;
-            text-decoration: none;
-            color: #333;
-        }
-        .game-icons img {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .game-icons img:hover {
-            transform: scale(1.1);
-        }
         button {
             position: absolute; /* Positioning the button */
             bottom: 20px; /* Distance from the bottom */
@@ -85,41 +69,47 @@
         button:hover {
             background-color: #45a049; /* Darker shade on hover */
         }
+        .section {
+            margin-bottom: 40px; /* Space between sections */
+        }
     </style>
 </head>
 <body>
     <h1>Welcome to Jo's Web</h1>
 
-    <!-- New Section for YouTube Channel with Image -->
-    <a href="https://youtube.com/@manictheguy" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
-    </a>
-
-    <p>Hi! Explore some unblocked games below:</p>
-
-    <ul>
-        <li><a href="https://astrogames06.github.io" target="_blank" rel="noopener noreferrer">Astro Games</a></li>
-        <li><a href="https://ug17.github.io/" target="_blank" rel="noopener noreferrer">UG17</a></li>
-        <li><a href="https://lesson1.guru/" target="_blank" rel="noopener noreferrer">Lesson 1 Guru</a></li>
-        <li><a href="https://oxide.3kh0.net/" target="_blank" rel="noopener noreferrer">Oxide Proxy</a></li>
-        <li><a href="https://mathpapers.org/" target="_blank" rel="noopener noreferrer">Math Papers</a></li>
-        <li><a href="https://binbashbanana.github.io/gfiles/list.html" target="_blank" rel="noopener noreferrer">BinBashBana</a></li>
-        <li><a href="https://retrobowl-2.github.io/" target="_blank" rel="noopener noreferrer">Lesson 1 Games</a></li>
-        <li><a href="https://wrnd.site/" target="_blank" rel="noopener noreferrer">UnNamed Proxy</a></li>
-        <li><a href="https://htwins.net/" target="_blank" rel="noopener noreferrer">hTwins</a></li>
-        <li><a href="https://classroom247.pages.dev/" target="_blank" rel="noopener noreferrer">Classroom Games</a></li>
-        <li><a href="https://snake-3d.com/" target="_blank" rel="noopener noreferrer">Snake 3D</a></li>
-        <li><a href="https://candyclicker.io/new-games" target="_blank" rel="noopener noreferrer">Candy Clicker Games</a></li>
-    </ul>
-
-    <!-- New Section for Game Icons -->
-    <h2>Game Icons</h2>
-    <div class="game-icons">
-        <a href="game1.html">
-            <img src="game1-icon.png" alt="Game 1 Icon">
-            <p>Play Kirka.io</p>
+    <!-- YouTube Section -->
+    <div class="section">
+        <a href="https://youtube.com/@manictheguy" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
         </a>
-        <!-- You can add more game icons here -->
+    </div>
+
+    <!-- Games Section -->
+    <div class="section">
+        <h2>Games</h2>
+        <ul>
+            <li><a href="game1.html" target="_blank" rel="noopener noreferrer">Play Kirka.io</a></li>
+            <!-- Add more game links here if needed -->
+        </ul>
+    </div>
+
+    <!-- Links Section -->
+    <div class="section">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://astrogames06.github.io" target="_blank" rel="noopener noreferrer">Astro Games</a></li>
+            <li><a href="https://ug17.github.io/" target="_blank" rel="noopener noreferrer">UG17</a></li>
+            <li><a href="https://lesson1.guru/" target="_blank" rel="noopener noreferrer">Lesson 1 Guru</a></li>
+            <li><a href="https://oxide.3kh0.net/" target="_blank" rel="noopener noreferrer">Oxide Proxy</a></li>
+            <li><a href="https://mathpapers.org/" target="_blank" rel="noopener noreferrer">Math Papers</a></li>
+            <li><a href="https://binbashbanana.github.io/gfiles/list.html" target="_blank" rel="noopener noreferrer">BinBashBana</a></li>
+            <li><a href="https://retrobowl-2.github.io/" target="_blank" rel="noopener noreferrer">Lesson 1 Games</a></li>
+            <li><a href="https://wrnd.site/" target="_blank" rel="noopener noreferrer">UnNamed Proxy</a></li>
+            <li><a href="https://htwins.net/" target="_blank" rel="noopener noreferrer">hTwins</a></li>
+            <li><a href="https://classroom247.pages.dev/" target="_blank" rel="noopener noreferrer">Classroom Games</a></li>
+            <li><a href="https://snake-3d.com/" target="_blank" rel="noopener noreferrer">Snake 3D</a></li>
+            <li><a href="https://candyclicker.io/new-games" target="_blank" rel="noopener noreferrer">Candy Clicker Games</a></li>
+        </ul>
     </div>
 
     <!-- Button to launch the link -->
