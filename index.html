@@ -9,34 +9,20 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
-            background-color: #F0F3F5;
-            color: #333;
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
+            background-color: #F0F3F5; /* Lighter background color */
+            color: #333; /* Text color for better contrast */
+            position: relative; /* Added for button positioning */
+            min-height: 100vh; /* Ensures the body takes the full height */
+            overflow: hidden; /* Hide the scrollbar */
         }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #333;
-            color: #F0F3F5;
+        /* Allow scrolling on the document without displaying the scrollbar */
+        html {
+            overflow: auto; /* Allow scrolling */
+            scrollbar-width: none; /* For Firefox */
         }
-        body.dark-mode a {
-            color: #00aaff;
+        html::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Edge */
         }
-        body.dark-mode h1 {
-            color: #6cff66;
-        }
-        body.dark-mode h2 {
-            color: #66caff;
-        }
-        body.dark-mode button {
-            background-color: #6cff66;
-        }
-        body.dark-mode button:hover {
-            background-color: #5adc5a;
-        }
-
         h1 {
             color: #4CAF50;
         }
@@ -60,82 +46,36 @@
             transition: color 0.3s;
         }
         a:hover {
-            color: #004085;
+            color: #004085; /* Darker blue on hover */
         }
         img {
-            width: 150px;
+            width: 150px; /* Adjust the size of the YouTube logo */
             height: auto;
         }
         button {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: absolute; /* Positioning the button */
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%; /* Centering the button */
+            transform: translateX(-50%); /* Adjusting the centering */
             padding: 10px 20px;
             font-size: 1em;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Button text color */
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #45a049; /* Darker shade on hover */
         }
         .section {
-            margin-bottom: 40px;
-        }
-
-        /* Toggle Switch Styles */
-        .switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        .switch input {
-            display: none;
-        }
-        .slider {
-            width: 50px;
-            height: 24px;
-            background-color: #ccc;
-            border-radius: 12px;
-            position: relative;
-            transition: background-color 0.2s;
-        }
-        .slider:before {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.2s;
-        }
-        input:checked + .slider {
-            background-color: #4CAF50;
-        }
-        input:checked + .slider:before {
-            transform: translateX(26px);
+            margin-bottom: 40px; /* Space between sections */
         }
     </style>
 </head>
 <body>
     <h1>Welcome to Jo's Web</h1>
-
-    <!-- Dark Mode Toggle -->
-    <div class="switch">
-        <label>
-            <input type="checkbox" id="theme-toggle">
-            <div class="slider"></div>
-        </label>
-    </div>
 
     <!-- YouTube Section -->
     <div class="section">
@@ -154,6 +94,7 @@
             <li><a href="subsurfers.html" target="_blank" rel="noopener noreferrer">Subway Surfers</a></li>
             <li><a href="1v1lol.html" target="_blank" rel="noopener noreferrer">1v1.lol</a></li>
             <li><a href="slope.html" target="_blank" rel="noopener noreferrer">Slope</a></li>
+            <!-- Add the games with the href being the name of the .html file. add them like you would the websites -->
         </ul>
     </div>
 
@@ -167,32 +108,16 @@
             <li><a href="https://oxide.3kh0.net/" target="_blank" rel="noopener noreferrer">Oxide Proxy</a></li>
             <li><a href="https://mathpapers.org/" target="_blank" rel="noopener noreferrer">Math Papers</a></li>
             <li><a href="https://binbashbanana.github.io/gfiles/list.html" target="_blank" rel="noopener noreferrer">BinBashBana</a></li>
+            <li><a href="https://retrobowl-2.github.io/" target="_blank" rel="noopener noreferrer">Lesson 1 Games</a></li>
+            <li><a href="https://wrnd.site/" target="_blank" rel="noopener noreferrer">UnNamed Proxy</a></li>
+            <li><a href="https://htwins.net/" target="_blank" rel="noopener noreferrer">hTwins</a></li>
+            <li><a href="https://classroom247.pages.dev/" target="_blank" rel="noopener noreferrer">Classroom Games</a></li>
+            <li><a href="https://snake-3d.com/" target="_blank" rel="noopener noreferrer">Snake 3D</a></li>
+            <li><a href="https://candyclicker.io/new-games" target="_blank" rel="noopener noreferrer">Candy Clicker Games</a></li>
         </ul>
     </div>
 
     <!-- Button to launch the link -->
     <button onclick="window.open('https://anamazingpilot.github.io', '_blank');">Open this page in new tab</button>
-
-    <script>
-        // Check localStorage for theme preference and apply it
-        const toggle = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-        
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            toggle.checked = true;
-        }
-
-        // Toggle theme and save preference
-        toggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
 </body>
 </html>
