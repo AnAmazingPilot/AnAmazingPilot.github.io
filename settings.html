@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        /* Basic styling for settings page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .settings-container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            font-size: 0.9em;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 20px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            text-align: center;
+            color: green;
+            font-size: 0.9em;
+        }
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #FFF;
+        }
+        /* Toggle switch styling */
+        .toggle-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .toggle-switch input {
+            display: none;
+        }
+        .toggle-switch label {
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            position: relative;
+            cursor: pointer;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: background-color 0.3s;
+        }
+        .slider {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        input:checked + label {
+            background-color: #4CAF50;
+        }
+        input:checked + label .slider {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="settings-container">
+        <h1>Site Settings</h1>
+        <form id="settingsForm">
+            <label for="siteTitle">Change Site Title:</label>
+            <input type="text" id="siteTitle" placeholder="Enter new title">
+
+            <label for="siteLogo">Change Site Logo (URL):</label>
+            <input type="text" id="siteLogo" placeholder="Enter logo URL">
+
+            <button type="button" onclick="saveSettings()">Save Changes</button>
+        </form>
+        <p class="message" id="saveMessage"></p>
+    </div>
+
+    <script>
+        // Load saved settings on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("siteTitle").value = localStorage.getItem("siteTitle") || '';
+            document.getElementById("siteLogo").value = localStorage.getItem("siteLogo") || '';
+
+            // Load saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.add(savedTheme);
+                document.getElementById('theme-toggle').checked = savedTheme === 'dark-mode';
+            }
+        });
+
+        // Function to save settings to localStorage
+        function saveSettings() {
+            const title = document.getElementById("siteTitle").value;
+            const logoUrl = document.getElementById("siteLogo").value;
+
+            localStorage.setItem("siteTitle", title);
+            localStorage.setItem("siteLogo", logoUrl);
+
+            const saveMessage = document.getElementById("saveMessage");
+            saveMessage.textContent = "Settings saved! Go back to the main page to see changes.";
+            setTimeout(() => saveMessage.textContent = "", 3000);
+        }
+
+        // Dark mode toggle functionality
+        const toggleSwitch = document.getElementById('theme-toggle');
+        toggleSwitch.addEventListener('change', () => {
+            if (toggleSwitch.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    </script>
+</body>
+</html>
