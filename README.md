@@ -1,2 +1,2 @@
 # AnAmazingPilot.github.io
-Some unblocked game websites and gams. Enjoy :)
+Some unblocked game websites and games. Enjoy :)
